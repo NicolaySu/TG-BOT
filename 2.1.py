@@ -7,7 +7,6 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.filters import CommandStart, Command
 from aiogram.types import Message
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
-# from async_cb_rate.parser import get_rate, get_codes, get_all_rates
 
 import xml.etree.ElementTree as ET
 import requests
@@ -33,7 +32,7 @@ states_of_choose = {}
 
 Eur = 94.26
 
-converts = ["RUB -> USD", "RUB -> EUR", "USD -> RUB", "USD -> EUR", "EUR -> USD", 'EUR -> RU']
+converts = ["RUB -> USD", "RUB -> EUR", "USD -> RUB", "USD -> EUR", "EUR -> USD", 'EUR -> RUB']
 builder = ReplyKeyboardBuilder()
 builder.button(text="RUB -> USD")
 builder.button(text="RUB -> EUR")

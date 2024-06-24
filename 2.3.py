@@ -25,8 +25,7 @@ Eur = float(
     .find("./Valute[CharCode='EUR']/VunitRate")
     .text.replace(",", "."))
 
-TOKEN = "7477179769:AAHNFb2RWHD2w_lXDK4OusXaZAvTY3rHlY4"
-# TOKEN = "7416547309:AAGCI248cWXAaTsSnOIob7UdGh9NYIFVTXo"
+TOKEN = "..."
 
 bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode='html'))
 dp = Dispatcher()

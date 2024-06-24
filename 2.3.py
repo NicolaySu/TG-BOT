@@ -16,14 +16,20 @@ response_content = response.content
 root = ET.fromstring(response_content)# Парсинг XML файла
 date = root.attrib.get('Date')#Извлечение атрибута Date из корневого элемента
 
-Usd = float(
-    ET.fromstring(requests.get(url).text)
-    .find("./Valute[CharCode='USD']/VunitRate")
-    .text.replace(",", "."))
-Eur = float(
-    ET.fromstring(requests.get(url).text)
-    .find("./Valute[CharCode='EUR']/VunitRate")
-    .text.replace(",", "."))
+Usd = None
+for valute in root.findall('Valute'):
+    char_code = valute.find('CharCode').text
+    if char_code == 'USD':
+        Usd = valute.find('Value').text
+        Usd = float(Usd.replace(',', '.'))
+        break
+Eur = None
+for valute in root.findall('Valute'):
+    char_code = valute.find('CharCode').text
+    if char_code == 'EUR':
+        Eur = valute.find('Value').text
+        Eur = float(Eur.replace(',', '.'))
+        break
 
 TOKEN = "7477179769:AAHNFb2RWHD2w_lXDK4OusXaZAvTY3rHlY4"
 # TOKEN = "7416547309:AAGCI248cWXAaTsSnOIob7UdGh9NYIFVTXo"

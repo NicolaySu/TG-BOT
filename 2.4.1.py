@@ -1,5 +1,3 @@
-#СОЗДАТЬ В ПАПКЕ ПРОЕКТА ФАЙЛ "user_states.json"
-
 import asyncio
 import logging
 import sys
